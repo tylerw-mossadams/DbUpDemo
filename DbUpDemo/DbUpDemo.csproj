@@ -6,14 +6,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\Schema\0001 - CreateTestTable.sql" />
+    <None Remove="Scripts\Schema\0002 - CreateUsersTable.sql" />
+    <None Remove="Scripts\Seed\Users_seed.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Schema\0002 - CreateUsersTable.sql" />
+    <EmbeddedResource Include="Scripts\Schema\0001 - CreateTestTable.sql" />
+    <EmbeddedResource Include="Scripts\Seed\Users_seed.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="dbup-core" Version="4.3.1" />
     <PackageReference Include="dbup-sqlserver" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="150.18208.0" />
+    <PackageReference Include="NLog" Version="4.6.8" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Scripts\AlwaysSql\" />
-    <Folder Include="Scripts\Schema\" />
-    <Folder Include="Scripts\Seed\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
