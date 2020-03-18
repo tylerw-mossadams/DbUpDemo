@@ -10,4 +10,10 @@
     <PackageReference Include="dbup-sqlserver" Version="4.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Scripts\AlwaysSql\" />
+    <Folder Include="Scripts\Schema\" />
+    <Folder Include="Scripts\Seed\" />
+  </ItemGroup>
+
 </Project>
